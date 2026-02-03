@@ -12,7 +12,7 @@ LB_data <- all_data %>%
   filter(str_detect(school, 
                     "Business and Economics|Loughborough Business School"))
 
-journal_counts <- filtered_data %>%
+journal_counts <- LB_data %>%
   clean_names() %>%
   filter(!is.na(issn) & issn != "") %>%
   count(issn, published_in, sort = TRUE)
